@@ -7,7 +7,7 @@ DIRS=src unit_tests
 all: $(DIRS)
 
 src: 
-	cd src; $(MAKE) chief_justice
+	cd src/$(PL); $(MAKE) chief_justice
 
 unit_tests: chief_justice
 	cd unit_tests; $(MAKE) unit_tests
