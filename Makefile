@@ -9,13 +9,14 @@ all: $(DIRS)
 src: 
 	cd src/$(PL); $(MAKE) chief_justice
 
-unit_tests: chief_justice
+unit_tests: src
 	cd unit_tests; $(MAKE) unit_tests
 
 clean:
 	cd libs; \
-        rm -rf *.so; \
-        cd $(SRC_DIR)/src; \
+        rm -rf *; \
+        cd $(SRC_DIR)/src/$(PL); \
         $(MAKE) clean; \
         cd $(SRC_DIR)/unit_tests; \
         $(MAKE) clean
+
