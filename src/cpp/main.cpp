@@ -1,3 +1,5 @@
+#include "Framework.h"
+
 int main(){
 
 	/*
@@ -20,6 +22,8 @@ int main(){
  *
  *
  * 	*/
+
+	Framework frmk;
 
 	return 0;
 }

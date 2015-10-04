@@ -19,6 +19,17 @@ DL_Status DL_Loader::load_library(const std::string& path_name, const std::strin
 	return DL_SUCCESS;
 }
 
+DL_Status DL_Loader::get_sym(const std::string& func_name, void*& func){
+	if(handle){
+		func = dlsym(handle, func_name.c_str() );
+		if(dlerror() != NULL){
+			return DL_UNKNOWN_FUNC;
+		}
+		return DL_SUCCESS;
+	}
+	return DL_WRONG_PATH;
+}
+
 void DL_Loader::unload_library(){
 	if(handle){
 		dlclose(handle);

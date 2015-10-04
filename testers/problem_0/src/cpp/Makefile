@@ -2,8 +2,8 @@
 
 include $(SRC_DIR)/OptMake
 
-all: 
-	$(CC) $(OPTIONS) $(WARN) $(DEBUG) $(DEV_INCLUDES) $(FPIC_OBJ) -o test_0.o -c test_0.cpp
+DeveloperImpl.o:
+	$(CC) $(OPTIONS) $(WARN) $(DEBUG) $(DEV_INCLUDES) $(FPIC_OBJ) -o DeveloperImpl.o -c DeveloperImpl.cpp
 
 clean:
 	rm -rf *.o *.so *.a
