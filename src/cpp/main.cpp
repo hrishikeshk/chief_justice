@@ -1,6 +1,10 @@
+#include <iostream>
+#include <string.h>
 #include "Framework.h"
+#include "Consts.h"
+#include <string>
 
-int main(){
+int main(int argc, char* argv[]){
 
 	/*
  *	read problem id
@@ -22,8 +26,18 @@ int main(){
  *
  *
  * 	*/
+	unsigned int prlen = strlen(argv[0]);
+	unsigned int dvlen = strlen(argv[1]);
+	if(argc != 2 || prlen == 0 || dvlen == 0 || prlen > MAX_ARG_LENGTH || dvlen > MAX_ARG_LENGTH){
+		std::cout << "Ensure that problem_id and developer_id are passed as command line arguments and are maximum 10 characters long.\n";
+		return 1;
+	}
+
+	std::string problem_id(argv[0]);
+	std::string developer_id(argv[1]);
 
 	Framework frmk;
+	frmk.test(problem_id, developer_id);
 
 	return 0;
 }

@@ -1,18 +1,11 @@
 #ifndef FRAMEWORK
 #define FRAMEWORK
+#include <string>
 
 class Framework{
 	public:
-		
-/*
-	void test_tmp(){
-		DL_Loader dl;
-		dl.load_library();
 
-		dl.unload_library();
-	}
-	
-*/
+	void test(const std::string& problem_id, const std::string& developer_id);
 };
 
 #endif
