@@ -1,6 +1,6 @@
 #ifndef _CONSTS_
 #define _CONSTS_
 
-unsigned int MAX_ARG_LENGTH = 10;
+unsigned int MAX_CMD_ARG_LENGTH = 0xf;
 #endif
 

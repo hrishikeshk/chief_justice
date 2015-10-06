@@ -8,8 +8,11 @@ DL_Loader.o: DL_Loader.cpp DL_Loader.h
 Framework.o: Framework.cpp Framework.h
 	$(CC) $(OPTIONS) $(WARN) $(DEBUG) $(INCLUDES) $(FPIC_OBJ) -o Framework.o -c Framework.cpp
 
-framework: DL_Loader.o Framework.o
-	$(CC) $(WARN) $(DEBUG) $(SHAREDLIB_FLAGS) -ldl -o $(SRC_DIR)/libs/libframework.so DL_Loader.o Framework.o
+TestEnvironment.o: TestEnvironment.cpp TestEnvironment.h
+	$(CC) $(OPTIONS) $(WARN) $(DEBUG) $(INCLUDES) $(FPIC_OBJ) -o TestEnvironment.o -c TestEnvironment.cpp
+
+framework: DL_Loader.o Framework.o TestEnvironment.o
+	$(CC) $(WARN) $(DEBUG) $(SHAREDLIB_FLAGS) -ldl -o $(SRC_DIR)/libs/libframework.so DL_Loader.o Framework.o TestEnvironment.o
 
 chief_justice: framework main.cpp
 	$(CC) $(OPTIONS) $(WARN) $(DEBUG) -L $(SRC_DIR)/libs -lframework -o $(SRC_DIR)/libs/app main.cpp

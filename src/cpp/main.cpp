@@ -28,8 +28,8 @@ int main(int argc, char* argv[]){
  * 	*/
 	unsigned int prlen = strlen(argv[0]);
 	unsigned int dvlen = strlen(argv[1]);
-	if(argc != 2 || prlen == 0 || dvlen == 0 || prlen > MAX_ARG_LENGTH || dvlen > MAX_ARG_LENGTH){
-		std::cout << "Ensure that problem_id and developer_id are passed as command line arguments and are maximum 10 characters long.\n";
+	if(argc != 2 || prlen == 0 || dvlen == 0 || prlen > MAX_CMD_ARG_LENGTH || dvlen > MAX_CMD_ARG_LENGTH){
+		std::cout << "Ensure that problem_id and developer_id are passed as command line arguments and are maximum 16 characters long.\n";
 		return 1;
 	}
 

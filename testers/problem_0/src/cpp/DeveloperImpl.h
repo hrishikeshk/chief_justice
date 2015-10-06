@@ -14,9 +14,13 @@ class DeveloperImpl : public DeveloperBase{
 		~DeveloperImpl(){
 			delete mp_soln;
 		}
+
+#ifdef _DEBUG_BUILD_
 		bool invoke(bool b){
 			return mp_soln->unit_test_func(b);
 		}
+#endif
+
 };
 
 #endif
